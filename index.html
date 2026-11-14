@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Matthieu Moreau-Le Breton</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Matthieu Moreau-Le Breton, actuaire et data scientist : recherche, projet de thèse (rentrée 2027) et projet entrepreneurial Convergence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : bandeau d'en-tête "estran" avec marches aléatoires en fond, onglets collants, un panneau par onglet, colonne de lecture ~68ch. */
+:root {
+  --paper: #F2F4F5;      /* gris d'estran, froid */
+  --surface: #FFFFFF;
+  --ink: #0F1B2B;        /* encre marine */
+  --navy: #1C3152;
+  --muted: #5B6675;
+  --line: #D6DCE2;
+  --brass: #8E6D22;      /* laiton */
+  --brass-soft: #F1E7CF;
+  --todo: #A04A2C;
+  --walk: rgba(28,49,82,.16);
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --s1: .875rem; --s2: 1rem; --s3: 1.25rem; --s4: 1.75rem; --s5: 2.5rem; --s6: clamp(2.4rem, 6vw, 4rem);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0B1421; --surface: #111D2E; --ink: #E7ECF1; --navy: #9DB4D6; --muted: #98A3B2;
+  --line: #24344A; --brass: #D8B865; --brass-soft: #2A2615; --todo: #E39A7C; --walk: rgba(157,180,214,.18);
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #0B1421; --surface: #111D2E; --ink: #E7ECF1; --navy: #9DB4D6; --muted: #98A3B2;
+  --line: #24344A; --brass: #D8B865; --brass-soft: #2A2615; --todo: #E39A7C; --walk: rgba(157,180,214,.18);
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: var(--s2); line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+a { color: var(--navy); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--brass); }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* En-tête */
+.masthead { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.masthead canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.masthead .wrap { position: relative; padding-block: clamp(2.5rem, 7vw, 4.5rem) 2rem; display: grid; gap: .75rem; }
+.eyebrow { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--f-display); font-weight: 400; font-size: var(--s6); line-height: 1.05; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.tagline { font-size: var(--s3); max-width: 44ch; margin: 0; color: var(--ink); text-wrap: balance; }
+.tagline em { font-family: var(--f-display); font-style: italic; color: var(--brass); }
+.sde { font-family: var(--f-mono); font-size: .85rem; color: var(--muted); }
+
+/* Onglets */
+.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.tabs nav { display: flex; gap: .25rem; overflow-x: auto; scrollbar-width: none; }
+.tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; padding: .9rem .8rem; border-bottom: 2px solid transparent; white-space: nowrap; }
+.tabs a:hover { color: var(--ink); }
+.tabs a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--brass); }
+
+main .wrap { padding-block: clamp(2rem, 5vw, 3.5rem) 4rem; }
+section.panel { display: grid; gap: 3rem; }
+h2 { font-family: var(--f-display); font-weight: 400; font-size: var(--s5); line-height: 1.1; margin: 0; text-wrap: balance; }
+h3 { font-family: var(--f-display); font-weight: 500; font-size: var(--s4); line-height: 1.2; margin: 0; text-wrap: balance; }
+h4 { font-size: var(--s2); font-weight: 600; margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.lead { font-size: var(--s3); line-height: 1.5; max-width: 60ch; }
+.stack { display: grid; gap: 1rem; }
+.stack-s { display: grid; gap: .4rem; }
+.muted { color: var(--muted); }
+.mono { font-family: var(--f-mono); font-size: .82rem; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.section-head { display: grid; gap: .5rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+
+/* Profil */
+.intro { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.portrait { margin: 0; display: grid; gap: .5rem; }
+.portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; height: auto; border-radius: 4px; display: block; max-width: 100%; }
+.portrait figcaption { font-size: .8rem; color: var(--muted); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1.25rem; margin: 0; }
+.facts dt { font-family: var(--f-mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding-top: .15rem; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+.now { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.feature { display: grid; gap: .75rem; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; text-decoration: none; color: var(--ink); }
+.feature:hover { border-color: var(--brass); color: var(--ink); }
+.feature .more { color: var(--navy); font-weight: 500; font-size: .92rem; }
+
+/* Frise / timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+.timeline li:first-child { border-top: 0; }
+.timeline .when { font-family: var(--f-mono); font-size: .82rem; color: var(--muted); padding-top: .2rem; font-variant-numeric: tabular-nums; }
+.timeline .what { display: grid; gap: .25rem; min-width: 0; }
+.timeline .org { color: var(--muted); }
+.timeline li.next .when { color: var(--brass); font-weight: 500; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.chips li { font-size: .88rem; border: 1px solid var(--line); border-radius: 999px; padding: .25rem .75rem; background: var(--surface); }
+
+.cv-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.cv-card { flex: 1 1 260px; display: grid; gap: .6rem; align-content: start; border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; background: var(--surface); }
+.cv-card .swatch { width: 2.25rem; height: .4rem; border-radius: 2px; }
+.btn { justify-self: start; display: inline-block; text-decoration: none; font-weight: 500; font-size: .92rem; padding: .55rem 1rem; border-radius: 4px; border: 1px solid var(--navy); color: var(--navy); }
+.btn:hover { background: var(--navy); color: var(--paper); }
+
+/* À compléter */
+.todo { display: inline-block; font-family: var(--f-mono); font-size: .75rem; letter-spacing: .04em; color: var(--todo); border: 1px dashed var(--todo); border-radius: 3px; padding: .05rem .4rem; vertical-align: .1em; max-width: 100%; overflow-wrap: anywhere; }
+.todo-block { border: 1px dashed var(--line); border-radius: 6px; padding: 1.25rem; display: grid; gap: .6rem; color: var(--muted); }
+
+/* Thèse : triptyque de disciplines */
+.thesis { display: grid; gap: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(1.25rem, 3vw, 2rem); }
+.disciplines { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 4px; }
+.disciplines > div { padding: 1rem; display: grid; gap: .35rem; align-content: start; min-width: 0; }
+.disciplines > div + div { border-left: 1px solid var(--line); }
+.disciplines .glyph { font-family: var(--f-display); font-style: italic; font-size: 1.5rem; color: var(--brass); line-height: 1.2; }
+.kv { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: .5rem 1rem; margin: 0; }
+.kv dt { color: var(--muted); font-size: .92rem; }
+.kv dd { margin: 0; min-width: 0; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1rem; }
+.card { display: grid; gap: .5rem; align-content: start; border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; background: var(--surface); min-width: 0; }
+.card .meta { font-family: var(--f-mono); font-size: .78rem; color: var(--muted); letter-spacing: .03em; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; font-size: .88rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .intro { grid-template-columns: minmax(0, 1fr); }
+  .portrait { max-width: 220px; }
+  .now { grid-template-columns: minmax(0, 1fr); }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  .disciplines { grid-template-columns: minmax(0, 1fr); }
+  .disciplines > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .kv { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .kv dd { margin-bottom: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+</head>
+<body>
+<header class="masthead">
+  <canvas id="walks" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow">Actuaire · Data scientist · Paris &amp; Bretagne</span>
+    <h1>Matthieu Moreau-Le Breton</h1>
+    <p class="tagline">Modéliser l’aléa pour mieux décider : de l’actuariat à la recherche en <em>sciences de gestion</em>, et à l’entrepreneuriat.</p>
+    <span class="sde" aria-label="Équation différentielle stochastique">dX<sub>t</sub> = μ(X<sub>t</sub>) dt + σ(X<sub>t</sub>) dW<sub>t</sub></span>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="wrap">
+    <nav aria-label="Sections du site">
+      <a href="#profil" data-tab="profil">Profil &amp; CV</a>
+      <a href="#entrepreneuriat" data-tab="entrepreneuriat">Entrepreneuriat</a>
+      <a href="#recherche" data-tab="recherche">Articles de recherche</a>
+      <a href="#education" data-tab="education">Éducation</a>
+      <a href="#outils" data-tab="outils">Sites outils</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+<div class="wrap">
+
+<!-- ============ PROFIL ============ -->
+<section class="panel" id="panel-profil" data-panel="profil" aria-label="Profil">
+  <div class="intro">
+    <figure class="portrait">
+      <img src="assets/matthieu.jpg" alt="Portrait de Matthieu Moreau-Le Breton en costume, devant une baie bretonne à marée basse" width="640" height="800">
+      <figcaption>Baie à marée basse, Bretagne</figcaption>
+    </figure>
+    <div class="stack">
+      <h2>Profil</h2>
+      <p class="lead">Actuaire diplômé et spécialiste en data science, je travaille à la croisée des probabilités, de la donnée et de la décision.</p>
+      <p>Mon parcours va de la modélisation de phénomènes aléatoires (marches aléatoires, processus de Galton-Watson) au conseil actuariel en assurance vie et à la qualité des données en supervision prudentielle. J’y ajoute deux projets personnels : <a href="#entrepreneuriat">Convergence</a>, un projet entrepreneurial autour de l’analyse ESG, et un <a href="#recherche">projet de thèse</a> en sciences de gestion, mathématiques stochastiques et analyse complexe, prévu pour la rentrée 2027.</p>
+      <p>Passionné de mer et de voile, je suis membre des Jeunes IHEDN depuis septembre 2025.</p>
+      <dl class="facts">
+        <dt>Poste</dt><dd>Data Quality, ACPR (depuis 12/2025)</dd>
+        <dt>Diplôme</dt><dd>Actuaire, EURIA (2024)</dd>
+        <dt>Contact</dt><dd>matt.mlb@icloud.com</dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/matthieu-moreau-le-breton" target="_blank" rel="noopener">linkedin.com/in/matthieu-moreau-le-breton</a></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">En ce moment</span><h3>Deux projets en cours</h3></div>
+    <div class="now">
+      <a class="feature" href="#entrepreneuriat">
+        <span class="eyebrow">Entrepreneuriat</span>
+        <h3>Convergence</h3>
+        <p>Automatiser en Python l’analyse des reportings ESG des entreprises du CAC 40.</p>
+        <span class="more">Voir le projet →</span>
+      </a>
+      <a class="feature" href="#recherche">
+        <span class="eyebrow">Recherche · rentrée 2027</span>
+        <h3>Projet de thèse</h3>
+        <p>Sciences de gestion × mathématiques stochastiques × analyse complexe.</p>
+        <span class="more">Voir le projet →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Parcours</span><h3>Expériences professionnelles</h3></div>
+    <ol class="timeline" reversed>
+      <li><span class="when">12/2025 – auj.</span><div class="what"><h4>Data Quality</h4><span class="org">ACPR, Autorité de contrôle prudentiel et de résolution</span><p>Qualité des données au sein de l’autorité de supervision des banques et des assurances.</p></div></li>
+      <li><span class="when">01/2025 – 07/2025</span><div class="what"><h4>Consultant actuaire vie</h4><span class="org">EY</span><p>Missions en assurance vie et modélisation financière ; Excel avancé et VBA.</p></div></li>
+      <li><span class="when">06/2023 – 09/2024</span><div class="what"><h4>Consultant en actuariat</h4><span class="org">Prim’Act</span><p>Certification et suivi de tables de mortalité ; analyse de l’impact du changement climatique en assurance. Mémoire sur le risque de liquidité, avec la proposition d’un indicateur de liquidité.</p></div></li>
+      <li><span class="when">06/2020 – 07/2020</span><div class="what"><h4>Assistant chercheur</h4><span class="org">Université Paris-Saclay</span><p>Modélisation de phénomènes aléatoires en Python : marches aléatoires, processus de Galton-Watson, modèles autorégressifs.</p></div></li>
+    </ol>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Boîte à outils</span><h3>Compétences</h3></div>
+    <ul class="chips">
+      <li>Modélisation statistique et actuarielle</li><li>Analyse de données</li><li>Python (pandas, NumPy, scikit-learn, NLP)</li><li>R</li><li>SQL</li><li>VBA</li><li>Excel avancé</li><li>Git</li><li>Streamlit</li><li>Travail en équipe</li>
+    </ul>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Hors du bureau</span><h3>Engagement et centres d’intérêt</h3></div>
+    <ol class="timeline">
+      <li><span class="when">Depuis 09/2025</span><div class="what"><h4>Membre des Jeunes IHEDN</h4></div></li>
+      <li><span class="when">08/2025</span><div class="what"><h4>Permis plaisance, option côtière</h4></div></li>
+    </ol>
+    <p class="muted">Voile (planche à voile, catamaran, voile habitable) · Triathlon · Tennis · Guitare · Dessin · Bretagne</p>
+  </div>
+
+  <div class="stack" id="cv">
+    <div class="section-head"><span class="eyebrow">Documents</span><h3>Curriculum vitæ</h3></div>
+    <div class="cv-row">
+      <div class="cv-card">
+        <span class="swatch" style="background:#1C3152"></span>
+        <h4>CV État-Major, Marine nationale</h4>
+        <p class="muted">Version préparée pour la candidature PMS État-Major (PDF, 1 page).</p>
+        <a class="btn" href="assets/CV_Matthieu_Moreau-Le_Breton.pdf" target="_blank" rel="noopener">Ouvrir le CV (PDF)</a>
+      </div>
+      <div class="cv-card">
+        <span class="swatch" style="background:#111111"></span>
+        <h4>CV professionnel</h4>
+        <p class="muted">Version sobre en noir, orientée recherche et entreprise.</p>
+        <span class="todo">À compléter : fichier PDF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENTREPRENEURIAT ============ -->
+<section class="panel" id="panel-entrepreneuriat" data-panel="entrepreneuriat" aria-label="Entrepreneuriat" hidden>
+  <div class="stack">
+    <span class="eyebrow">Entrepreneuriat</span>
+    <h2>Convergence</h2>
+    <p class="lead">Un projet entrepreneurial qui automatise en Python l’analyse des reportings ESG des entreprises du CAC 40.</p>
+  </div>
+
+  <div class="thesis">
+    <dl class="kv">
+      <dt>Période</dt><dd><span class="mono">07/2025 – 10/2025</span> (première phase, d’après le CV) <span class="todo">À confirmer : statut actuel</span></dd>
+      <dt>Domaine</dt><dd>Finance durable, reporting extra-financier (ESG)</dd>
+      <dt>Périmètre</dt><dd>Reportings ESG des sociétés du CAC 40</dd>
+      <dt>Approche</dt><dd>Automatisation en Python de la lecture et de l’analyse des rapports</dd>
+      <dt>Rôle</dt><dd><span class="todo">À compléter : fondateur, cofondateur…</span></dd>
+      <dt>Équipe</dt><dd><span class="todo">À compléter</span></dd>
+      <dt>Lien</dt><dd><span class="todo">À compléter : site ou démo</span></dd>
+    </dl>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Le projet</span><h3>Problème, solution, prochaines étapes</h3></div>
+    <div class="cards">
+      <div class="card"><h4>Le problème</h4><p class="muted">Quel besoin Convergence adresse-t-il, et pour qui (investisseurs, analystes, entreprises) ?</p><span class="todo">À compléter</span></div>
+      <div class="card"><h4>La solution</h4><p class="muted">Ce que produit l’outil à partir des reportings : indicateurs, comparaisons, scores…</p><span class="todo">À compléter</span></div>
+      <div class="card"><h4>Où en est-on</h4><p class="muted">Résultats obtenus, utilisateurs, partenaires, prochaines étapes.</p><span class="todo">À compléter</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECHERCHE ============ -->
+<section class="panel" id="panel-recherche" data-panel="recherche" aria-label="Articles de recherche" hidden>
+  <div class="stack">
+    <span class="eyebrow">Recherche</span>
+    <h2>Projet de thèse et travaux de recherche</h2>
+    <p class="lead">Un doctorat prévu pour la rentrée 2027, à l’intersection de trois disciplines.</p>
+  </div>
+
+  <div class="thesis">
+    <div class="stack-s">
+      <span class="eyebrow">Projet de thèse · rentrée 2027</span>
+      <h3><span class="todo">À compléter : titre provisoire de la thèse</span></h3>
+    </div>
+    <div class="disciplines">
+      <div><span class="glyph">Gestion</span><h4>Sciences de gestion</h4><p class="muted">L’étude des organisations, de leurs stratégies et de leurs décisions.</p></div>
+      <div><span class="glyph">dW<sub>t</sub></span><h4>Mathématiques stochastiques</h4><p class="muted">Les processus aléatoires et leur dynamique dans le temps.</p></div>
+      <div><span class="glyph">f(z)</span><h4>Analyse complexe</h4><p class="muted">Les fonctions de variable complexe et leurs propriétés analytiques.</p></div>
+    </div>
+    <dl class="kv">
+      <dt>Question de recherche</dt><dd><span class="todo">À compléter</span></dd>
+      <dt>Établissement / école doctorale</dt><dd><span class="todo">À compléter</span></dd>
+      <dt>Laboratoire</dt><dd><span class="todo">À compléter</span></dd>
+      <dt>Direction de thèse</dt><dd><span class="todo">À compléter</span></dd>
+      <dt>Début prévu</dt><dd>Rentrée 2027</dd>
+    </dl>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Travaux</span><h3>Mémoires et travaux de recherche</h3></div>
+    <div class="cards">
+      <article class="card">
+        <span class="meta">Prim’Act · 2023 – 2024 · Mémoire</span>
+        <h4>Risque de liquidité : proposition d’un indicateur de liquidité</h4>
+        <p class="muted">Mémoire consacré à la mesure du risque de liquidité, avec la construction d’un indicateur.</p>
+        <span class="todo">À compléter : résumé et lien</span>
+      </article>
+      <article class="card">
+        <span class="meta">Université Paris-Saclay · 2020 · Stage de recherche</span>
+        <h4>Modélisation de phénomènes aléatoires</h4>
+        <p class="muted">Marches aléatoires, processus de Galton-Watson et modèles autorégressifs, simulés en Python.</p>
+      </article>
+      <article class="card">
+        <span class="meta">Prim’Act · 2023 – 2024 · Étude</span>
+        <h4>Changement climatique et assurance</h4>
+        <p class="muted">Analyse de l’impact du changement climatique en assurance, en lien avec les tables de mortalité.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Publications</span><h3>Articles</h3></div>
+    <div class="todo-block">
+      <p>Aucun article publié pour le moment. Les articles, prépublications et communications apparaîtront ici.</p>
+      <span class="todo">À compléter : articles en cours ou soumis</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="panel" id="panel-education" data-panel="education" aria-label="Éducation" hidden>
+  <div class="stack">
+    <span class="eyebrow">Éducation</span>
+    <h2>Formation</h2>
+    <p class="lead">Des mathématiques et de la physique à l’actuariat, en passant par la data science.</p>
+  </div>
+  <ol class="timeline">
+    <li class="next"><span class="when">2027 →</span><div class="what"><h4>Doctorat (projet)</h4><span class="org">Sciences de gestion × mathématiques stochastiques × analyse complexe</span><p><span class="todo">À compléter : établissement</span></p></div></li>
+    <li><span class="when">2022 – 2024</span><div class="what"><h4>Diplôme d’actuaire</h4><span class="org">EURIA, Euro-Institut d’Actuariat</span></div></li>
+    <li><span class="when">2021 – 2022</span><div class="what"><h4>Master Data Science</h4><span class="org">ISADS, Université Paris-Saclay</span></div></li>
+    <li><span class="when">2018 – 2021</span><div class="what"><h4>Double licence Mathématiques–Physique</h4><span class="org"><span class="todo">À compléter : université</span></span></div></li>
+    <li><span class="when">2018</span><div class="what"><h4>Baccalauréat scientifique</h4><span class="org">Mention Très Bien</span></div></li>
+  </ol>
+</section>
+
+<!-- ============ OUTILS ============ -->
+<section class="panel" id="panel-outils" data-panel="outils" aria-label="Sites outils" hidden>
+  <div class="stack">
+    <span class="eyebrow">Sites outils</span>
+    <h2>Outils et liens</h2>
+    <p class="lead">Les applications que j’ai construites et les ressources que j’utilise.</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="https://www.linkedin.com/in/matthieu-moreau-le-breton" target="_blank" rel="noopener">
+      <span class="meta">Réseau</span><h4>LinkedIn</h4><p class="muted">Parcours détaillé et actualités.</p>
+    </a>
+    <div class="card">
+      <span class="meta">Application · Streamlit</span><h4>Outil d’analyse ESG (Convergence)</h4>
+      <p class="muted">Démo de l’analyse automatisée des reportings ESG.</p>
+      <span class="todo">À compléter : lien, si l’outil est public</span>
+    </div>
+    <div class="card">
+      <span class="meta">Code</span><h4>GitHub</h4>
+      <p class="muted">Dépôts de code et simulations.</p>
+      <span class="todo">À compléter : lien du profil</span>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Matthieu Moreau-Le Breton</span>
+    <span>matt.mlb@icloud.com</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var tabs = ["profil", "entrepreneuriat", "recherche", "education", "outils"];
+  function show() {
+    var id = (location.hash || "").replace("#", "");
+    if (id === "cv") id = "profil";
+    if (tabs.indexOf(id) < 0) id = "profil";
+    document.querySelectorAll("[data-panel]").forEach(function (p) { p.hidden = p.dataset.panel !== id; });
+    document.querySelectorAll("[data-tab]").forEach(function (a) {
+      if (a.dataset.tab === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, 0); });
+  show();
+
+  // Marches aléatoires en fond d'en-tête
+  var c = document.getElementById("walks"), ctx = c.getContext("2d");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var paths = [], step = 0, raf;
+  function seed(n) { var s = n; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  function gauss(r) { var u = r() || 1e-9, v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+  function build() {
+    var dpr = window.devicePixelRatio || 1, w = c.clientWidth, h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var r = seed(2027), N = 7, steps = 260; paths = [];
+    for (var k = 0; k < N; k++) {
+      var y = h * (0.35 + 0.4 * r()), pts = [];
+      for (var i = 0; i <= steps; i++) { pts.push([w * 0.35 + (w * 0.68) * i / steps, y]); y += gauss(r) * h * 0.022; }
+      paths.push(pts);
+    }
+    return steps;
+  }
+  function draw(upto) {
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--walk").trim();
+    ctx.lineWidth = 1.2;
+    paths.forEach(function (pts) {
+      ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+      for (var i = 1; i <= upto && i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+      ctx.stroke();
+    });
+  }
+  function start() {
+    cancelAnimationFrame(raf);
+    var total = build();
+    if (reduce) { draw(total); return; }
+    step = 0;
+    (function tick() { step += 3; draw(step); if (step < total) raf = requestAnimationFrame(tick); })();
+  }
+  start();
+  var t; window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(start, 150); });
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { draw(1e9); });
+})();
+</script>
+</body>
+</html>
