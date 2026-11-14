@@ -6,7 +6,7 @@
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Matthieu Moreau-Le Breton</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Matthieu Moreau-Le Breton, actuaire et data scientist : recherche, projet de thèse (rentrée 2027) et projet entrepreneurial Convergence.">
+<meta name="description" content="Matthieu Moreau-Le Breton, actuaire et data scientist : recherche sur la liquidité et les critères ISQ, projet de thèse (rentrée 2027) et association Convergence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -125,6 +125,15 @@ p { margin: 0; max-width: 68ch; }
 .card { display: grid; gap: .5rem; align-content: start; border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; background: var(--surface); min-width: 0; }
 .card .meta { font-family: var(--f-mono); font-size: .78rem; color: var(--muted); letter-spacing: .03em; }
 
+.findings { margin: 0; padding-left: 1.1rem; display: grid; gap: .35rem; max-width: 68ch; }
+.isq { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: 1.75rem; align-items: center; }
+.isq-rings { width: 100%; max-width: 200px; height: auto; display: block; }
+.isq-rings circle { stroke: var(--line); stroke-width: 1.5; }
+.isq-rings .ring-q { fill: var(--paper); }
+.isq-rings .ring-s { fill: var(--brass-soft); }
+.isq-rings .ring-i { fill: var(--navy); }
+.isq-rings .ring-label { font-family: var(--f-display); font-style: italic; font-size: 22px; text-anchor: middle; fill: var(--ink); }
+.isq-rings .ring-label:first-of-type { fill: var(--paper); }
 footer { border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; font-size: .88rem; color: var(--muted); }
 
@@ -136,6 +145,8 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
   .disciplines { grid-template-columns: minmax(0, 1fr); }
   .disciplines > div + div { border-left: 0; border-top: 1px solid var(--line); }
   .kv { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .isq { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .isq .stack { justify-self: stretch; }
   .kv dd { margin-bottom: .6rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
@@ -148,8 +159,8 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
   <div class="wrap">
     <span class="eyebrow">Actuaire · Data scientist · Paris &amp; Bretagne</span>
     <h1>Matthieu Moreau-Le Breton</h1>
-    <p class="tagline">Modéliser l’aléa pour mieux décider : de l’actuariat à la recherche en <em>sciences de gestion</em>, et à l’entrepreneuriat.</p>
-    <span class="sde" aria-label="Équation différentielle stochastique">dX<sub>t</sub> = μ(X<sub>t</sub>) dt + σ(X<sub>t</sub>) dW<sub>t</sub></span>
+    <p class="tagline">Actuariat, risque et finance durable : des critères <em>plus cohérents</em> pour mieux mesurer le risque, de la recherche à l’entrepreneuriat.</p>
+    <span class="sde">Inerte · Sensible · Qualité</span>
   </div>
 </header>
 
@@ -177,31 +188,32 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
     </figure>
     <div class="stack">
       <h2>Profil</h2>
-      <p class="lead">Actuaire diplômé et spécialiste en data science, je travaille à la croisée des probabilités, de la donnée et de la décision.</p>
-      <p>Mon parcours va de la modélisation de phénomènes aléatoires (marches aléatoires, processus de Galton-Watson) au conseil actuariel en assurance vie et à la qualité des données en supervision prudentielle. J’y ajoute deux projets personnels : <a href="#entrepreneuriat">Convergence</a>, un projet entrepreneurial autour de l’analyse ESG, et un <a href="#recherche">projet de thèse</a> en sciences de gestion, mathématiques stochastiques et analyse complexe, prévu pour la rentrée 2027.</p>
+      <p class="lead">Actuaire diplômé et spécialiste en data science, je travaille sur la mesure des risques financiers et sur la finance durable.</p>
+      <p>Après le conseil actuariel (assurance vie, tables de mortalité, risque climatique), je travaille aujourd’hui sur la qualité des données à l’ACPR. En recherche, j’ai coécrit avec Frédéric Planchet un <a href="#recherche">article sur la mesure de la liquidité</a> des actifs financiers. Je prépare un <a href="#recherche">projet de thèse</a> pour la rentrée 2027 sur les critères ISQ, une évolution des critères ESG, appliqués au risque de crédit. Je préside aussi <a href="#entrepreneuriat">Convergence</a>, une association qui veut faire converger les données ESG des entreprises, des organisations publiques et des particuliers.</p>
       <p>Passionné de mer et de voile, je suis membre des Jeunes IHEDN depuis septembre 2025.</p>
       <dl class="facts">
         <dt>Poste</dt><dd>Data Quality, ACPR (depuis 12/2025)</dd>
         <dt>Diplôme</dt><dd>Actuaire, EURIA (2024)</dd>
         <dt>Contact</dt><dd>matt.mlb@icloud.com</dd>
-        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/matthieu-moreau-le-breton" target="_blank" rel="noopener">linkedin.com/in/matthieu-moreau-le-breton</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/matthieu-moreau-le-breton-b0a248184/" target="_blank" rel="noopener">linkedin.com/in/matthieu-moreau-le-breton</a></dd>
+        <dt>GitHub</dt><dd><a href="https://github.com/M-au-Cube/" target="_blank" rel="noopener">github.com/M-au-Cube</a></dd>
       </dl>
     </div>
   </div>
 
   <div class="stack">
-    <div class="section-head"><span class="eyebrow">En ce moment</span><h3>Deux projets en cours</h3></div>
+    <div class="section-head"><span class="eyebrow">En ce moment</span><h3>Projets en cours</h3></div>
     <div class="now">
       <a class="feature" href="#entrepreneuriat">
         <span class="eyebrow">Entrepreneuriat</span>
         <h3>Convergence</h3>
-        <p>Automatiser en Python l’analyse des reportings ESG des entreprises du CAC 40.</p>
+        <p>Une association que j’ai fondée et que je préside : des données fiables pour accélérer la transition durable.</p>
         <span class="more">Voir le projet →</span>
       </a>
       <a class="feature" href="#recherche">
         <span class="eyebrow">Recherche · rentrée 2027</span>
         <h3>Projet de thèse</h3>
-        <p>Sciences de gestion × mathématiques stochastiques × analyse complexe.</p>
+        <p>Des critères ESG aux critères ISQ (Inerte, Sensible, Qualité), appliqués à l’évaluation du risque de crédit.</p>
         <span class="more">Voir le projet →</span>
       </a>
     </div>
@@ -237,16 +249,16 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
     <div class="section-head"><span class="eyebrow">Documents</span><h3>Curriculum vitæ</h3></div>
     <div class="cv-row">
       <div class="cv-card">
+        <span class="swatch" style="background:#111111"></span>
+        <h4>CV professionnel</h4>
+        <p class="muted">Version générale, sobre en noir (PDF, 1 page).</p>
+        <a class="btn" href="assets/CV_Matthieu_Moreau-Le_Breton_Professionnel.pdf" target="_blank" rel="noopener">Ouvrir le CV (PDF)</a>
+      </div>
+      <div class="cv-card">
         <span class="swatch" style="background:#1C3152"></span>
         <h4>CV État-Major, Marine nationale</h4>
         <p class="muted">Version préparée pour la candidature PMS État-Major (PDF, 1 page).</p>
         <a class="btn" href="assets/CV_Matthieu_Moreau-Le_Breton.pdf" target="_blank" rel="noopener">Ouvrir le CV (PDF)</a>
-      </div>
-      <div class="cv-card">
-        <span class="swatch" style="background:#111111"></span>
-        <h4>CV professionnel</h4>
-        <p class="muted">Version sobre en noir, orientée recherche et entreprise.</p>
-        <span class="todo">À compléter : fichier PDF</span>
       </div>
     </div>
   </div>
@@ -257,28 +269,42 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
   <div class="stack">
     <span class="eyebrow">Entrepreneuriat</span>
     <h2>Convergence</h2>
-    <p class="lead">Un projet entrepreneurial qui automatise en Python l’analyse des reportings ESG des entreprises du CAC 40.</p>
+    <p class="lead">« Grâce aux données, faire converger les habitudes vers un avenir durable. »</p>
+    <p>Convergence veut devenir un acteur neutre et de confiance, qui accélère la transition durable. Le projet relie trois publics autour d’un référentiel commun de données ESG : les entreprises, l’État et les organisations publiques, et les particuliers.</p>
   </div>
 
   <div class="thesis">
     <dl class="kv">
-      <dt>Période</dt><dd><span class="mono">07/2025 – 10/2025</span> (première phase, d’après le CV) <span class="todo">À confirmer : statut actuel</span></dd>
-      <dt>Domaine</dt><dd>Finance durable, reporting extra-financier (ESG)</dd>
-      <dt>Périmètre</dt><dd>Reportings ESG des sociétés du CAC 40</dd>
-      <dt>Approche</dt><dd>Automatisation en Python de la lecture et de l’analyse des rapports</dd>
-      <dt>Rôle</dt><dd><span class="todo">À compléter : fondateur, cofondateur…</span></dd>
-      <dt>Équipe</dt><dd><span class="todo">À compléter</span></dd>
-      <dt>Lien</dt><dd><span class="todo">À compléter : site ou démo</span></dd>
+      <dt>Rôle</dt><dd>Président et fondateur</dd>
+      <dt>Équipe</dt><dd>Camille Huret, vice-présidente et responsable projet<br>Timothée Huret, responsable de la partie technique IA</dd>
+      <dt>Statut</dt><dd>Association, après un premier lancement sous forme de startup. Création officielle en cours.</dd>
+      <dt>Depuis</dt><dd><span class="mono">07/2025</span></dd>
+      <dt>Domaine</dt><dd>Données ESG, reporting de durabilité (CSRD), finance durable</dd>
     </dl>
   </div>
 
   <div class="stack">
-    <div class="section-head"><span class="eyebrow">Le projet</span><h3>Problème, solution, prochaines étapes</h3></div>
+    <div class="section-head"><span class="eyebrow">Constat</span><h3>Pourquoi Convergence</h3></div>
+    <p>Les notations ESG se sont développées depuis le milieu des années 2010, mais elles manquent encore de fiabilité, de cohérence et de granularité. Les initiatives existantes, côté entreprises comme côté consommateurs, n’offrent pas de vision d’ensemble. Il reste aussi très difficile pour un consommateur de mesurer son propre impact environnemental, alors qu’il est le premier maillon de l’économie.</p>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">L’offre</span><h3>Quatre briques sur toute la chaîne ESG</h3></div>
     <div class="cards">
-      <div class="card"><h4>Le problème</h4><p class="muted">Quel besoin Convergence adresse-t-il, et pour qui (investisseurs, analystes, entreprises) ?</p><span class="todo">À compléter</span></div>
-      <div class="card"><h4>La solution</h4><p class="muted">Ce que produit l’outil à partir des reportings : indicateurs, comparaisons, scores…</p><span class="todo">À compléter</span></div>
-      <div class="card"><h4>Où en est-on</h4><p class="muted">Résultats obtenus, utilisateurs, partenaires, prochaines étapes.</p><span class="todo">À compléter</span></div>
+      <div class="card"><span class="meta">Entreprises et organisations publiques</span><h4>Transparence</h4><p class="muted">Un tableau de bord ESG pour produire des rapports, prendre des décisions durables et trouver des partenaires engagés dans la transition.</p></div>
+      <div class="card"><span class="meta">Entreprises</span><h4>Résilience</h4><p class="muted">Des questionnaires et des audits ESG pour évaluer et renforcer ses pratiques durables.</p></div>
+      <div class="card"><span class="meta">Consommateurs</span><h4>Evidence</h4><p class="muted">Une application mobile, conçue pour et par les consommateurs, qui évalue les produits en les scannant.</p></div>
+      <div class="card"><span class="meta">Socle commun</span><h4>Cohérence</h4><p class="muted">La base de données centrale de Convergence, qui structure et unifie les données recueillies.</p></div>
     </div>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Feuille de route</span><h3>Prochaines étapes</h3></div>
+    <ol class="timeline">
+      <li><span class="when">En cours</span><div class="what"><h4>Outil de génération de rapports CSRD</h4><p>Une base des data points officiels ESRS, des données chiffrées issues d’un pipeline structuré et jamais générées par un modèle de langage, et une génération assistée (RAG) des parties narratives à partir de sources internes vérifiées.</p></div></li>
+      <li><span class="when">En cours</span><div class="what"><h4>Équipe et communication</h4><p>Recruter de deux à cinq personnes, lancer le site de présentation et les réseaux sociaux, et chercher des financements tout en restant indépendant.</p></div></li>
+      <li class="next"><span class="when">Objectif 12/2026</span><div class="what"><h4>Première version</h4><p>Intégrer l’outil au tableau de bord Transparence et le proposer à des entreprises et des collectivités.</p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -286,56 +312,80 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
 <section class="panel" id="panel-recherche" data-panel="recherche" aria-label="Articles de recherche" hidden>
   <div class="stack">
     <span class="eyebrow">Recherche</span>
-    <h2>Projet de thèse et travaux de recherche</h2>
-    <p class="lead">Un doctorat prévu pour la rentrée 2027, à l’intersection de trois disciplines.</p>
-  </div>
-
-  <div class="thesis">
-    <div class="stack-s">
-      <span class="eyebrow">Projet de thèse · rentrée 2027</span>
-      <h3><span class="todo">À compléter : titre provisoire de la thèse</span></h3>
-    </div>
-    <div class="disciplines">
-      <div><span class="glyph">Gestion</span><h4>Sciences de gestion</h4><p class="muted">L’étude des organisations, de leurs stratégies et de leurs décisions.</p></div>
-      <div><span class="glyph">dW<sub>t</sub></span><h4>Mathématiques stochastiques</h4><p class="muted">Les processus aléatoires et leur dynamique dans le temps.</p></div>
-      <div><span class="glyph">f(z)</span><h4>Analyse complexe</h4><p class="muted">Les fonctions de variable complexe et leurs propriétés analytiques.</p></div>
-    </div>
-    <dl class="kv">
-      <dt>Question de recherche</dt><dd><span class="todo">À compléter</span></dd>
-      <dt>Établissement / école doctorale</dt><dd><span class="todo">À compléter</span></dd>
-      <dt>Laboratoire</dt><dd><span class="todo">À compléter</span></dd>
-      <dt>Direction de thèse</dt><dd><span class="todo">À compléter</span></dd>
-      <dt>Début prévu</dt><dd>Rentrée 2027</dd>
-    </dl>
+    <h2>Articles et projet de thèse</h2>
+    <p class="lead">Mesurer les risques avec des critères plus cohérents : la liquidité des actifs aujourd’hui, la durabilité et le risque de crédit demain.</p>
   </div>
 
   <div class="stack">
-    <div class="section-head"><span class="eyebrow">Travaux</span><h3>Mémoires et travaux de recherche</h3></div>
+    <div class="section-head"><span class="eyebrow">Article · version 1.1 du 28/10/2026</span><h3>Mesurer la liquidité des actifs financiers</h3></div>
+    <article class="thesis">
+      <div class="stack-s">
+        <h4>Liquidité juridique, liquidité financière et indicateur synthétique. Application à la gestion actif-passif d’un assureur prévoyance</h4>
+        <p class="muted">Matthieu Moreau-Le Breton et Frédéric Planchet (ISFA, Prim’Act) · 30 pages</p>
+      </div>
+      <p>L’article propose un cadre unifié pour mesurer la liquidité des actifs détenus par les institutions financières. Il sépare la liquidité juridique, imposée par le droit et l’organisation des marchés (règlement-livraison, droit de préemption, agréments), de la liquidité financière, décrite par la surface probabiliste ΔPTV<sub>α</sub>(Q, t) : la décote subie pour vendre une quantité Q dans un délai t.</p>
+      <p>L’étude porte sur huit actifs, des ETF actions au Private Equity, sur un historique fictif calibré sur 2015-2025. Elle construit un indicateur synthétique <span class="mono">L = x·I₁ + (1 − x)·I₂</span>, dont le poids x* = 0,55 est calibré sur le coût actif-passif, et une notation de A à F.</p>
+      <ul class="findings">
+        <li><strong>Un risque de délai.</strong> Chez un assureur prévoyance, l’illiquidité des actifs non cotés est d’abord une question de délai.</li>
+        <li><strong>−26 %</strong> sur le coût d’une crise de trésorerie grâce à une stratégie de liquidation optimale.</li>
+        <li><strong>4 points de base</strong> de rendement : le coût de la contrainte de liquidité sur la frontière efficiente.</li>
+      </ul>
+      <p class="mono muted">Mots-clés : liquidité, surface ΔPTV, gestion actif-passif, assurance prévoyance, Solvabilité II · JEL G11, G12, G22, G23, C14, C15, C41</p>
+      <a class="btn" href="assets/Article_Liquidite_Moreau-Le_Breton_Planchet.pdf" target="_blank" rel="noopener">Lire l’article (PDF)</a>
+    </article>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Projet de thèse · rentrée 2027</span><h3>De l’ESG à l’ISQ</h3></div>
+    <div class="thesis">
+      <div class="isq">
+        <svg class="isq-rings" viewBox="0 0 240 240" role="img" aria-label="Trois cercles concentriques : I au centre, S autour, Q à l’extérieur">
+          <circle cx="120" cy="120" r="112" class="ring-q"/>
+          <circle cx="120" cy="120" r="76" class="ring-s"/>
+          <circle cx="120" cy="120" r="40" class="ring-i"/>
+          <text x="120" y="128" class="ring-label">I</text>
+          <text x="120" y="70" class="ring-label">S</text>
+          <text x="120" y="32" class="ring-label">Q</text>
+        </svg>
+        <div class="stack">
+          <p>Les critères ESG (Environnement, Social, Gouvernance) dominent l’investissement responsable, mais les agences de notation attribuent souvent des notes très différentes à une même entreprise. Le cadre ISQ propose une autre organisation : trois cercles hiérarchiques au lieu d’une moyenne de trois piliers supposés équivalents.</p>
+          <dl class="kv">
+            <dt>I · Inerte</dt><dd>Le socle mesurable : émissions, eau, polluants, déchets, sols, énergie. Une condition.</dd>
+            <dt>S · Sensible</dt><dd>Les effets sur les humains et les autres êtres sensibles : santé, sécurité, droits, conditions de travail, bien-être animal. Une condition.</dd>
+            <dt>Q · Qualité</dt><dd>La qualité de l’action : gouvernance, transparence, robustesse, conception, durabilité technique. Une bonification.</dd>
+          </dl>
+        </div>
+      </div>
+      <p>La règle de décision remplace la moyenne pondérée : Q ne peut pas compenser une défaillance grave sur I ou sur S. Une excellente gouvernance ne rend pas durable une activité matériellement insoutenable. La note prend la forme d’un profil, par exemple <span class="mono">I2 / S1 / Q3</span>, accompagné des données sous-jacentes.</p>
+      <p>La thèse appliquera ensuite ces critères à une nouvelle évaluation du risque de crédit. L’idée est que des critères plus cohérents permettent de mieux comprendre ce risque.</p>
+      <dl class="kv">
+        <dt>Hypothèses testées</dt><dd>Les notations ESG divergent en partie à cause de leurs définitions, pondérations et mesures. Une structure hiérarchique I → S → Q réduit ces incohérences, résiste mieux aux changements d’indicateurs et de pondérations, et donne des classements plus lisibles pour les investisseurs.</dd>
+        <dt>Méthode</dt><dd>Revue de littérature, taxonomie ESG → ISQ avec plusieurs codeurs, panel de plusieurs centaines d’entreprises, tests de convergence (Spearman, Kendall), analyses de sensibilité par Monte-Carlo, validation externe sur des résultats observés (émissions, incidents, controverses, sanctions).</dd>
+        <dt>Établissement</dt><dd><span class="todo">À compléter</span></dd>
+        <dt>Direction de thèse</dt><dd><span class="todo">À compléter</span></dd>
+        <dt>Début prévu</dt><dd>Rentrée 2027</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="section-head"><span class="eyebrow">Travaux antérieurs</span><h3>Mémoires et études</h3></div>
     <div class="cards">
       <article class="card">
         <span class="meta">Prim’Act · 2023 – 2024 · Mémoire</span>
         <h4>Risque de liquidité : proposition d’un indicateur de liquidité</h4>
-        <p class="muted">Mémoire consacré à la mesure du risque de liquidité, avec la construction d’un indicateur.</p>
-        <span class="todo">À compléter : résumé et lien</span>
-      </article>
-      <article class="card">
-        <span class="meta">Université Paris-Saclay · 2020 · Stage de recherche</span>
-        <h4>Modélisation de phénomènes aléatoires</h4>
-        <p class="muted">Marches aléatoires, processus de Galton-Watson et modèles autorégressifs, simulés en Python.</p>
+        <p class="muted">Premier travail sur l’indicateur ΔPTV, prolongé par l’article ci-dessus.</p>
       </article>
       <article class="card">
         <span class="meta">Prim’Act · 2023 – 2024 · Étude</span>
         <h4>Changement climatique et assurance</h4>
         <p class="muted">Analyse de l’impact du changement climatique en assurance, en lien avec les tables de mortalité.</p>
       </article>
-    </div>
-  </div>
-
-  <div class="stack">
-    <div class="section-head"><span class="eyebrow">Publications</span><h3>Articles</h3></div>
-    <div class="todo-block">
-      <p>Aucun article publié pour le moment. Les articles, prépublications et communications apparaîtront ici.</p>
-      <span class="todo">À compléter : articles en cours ou soumis</span>
+      <article class="card">
+        <span class="meta">Université Paris-Saclay · 2020 · Stage de recherche</span>
+        <h4>Modélisation de phénomènes aléatoires</h4>
+        <p class="muted">Simulations en Python de processus aléatoires et de modèles autorégressifs.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -348,10 +398,10 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
     <p class="lead">Des mathématiques et de la physique à l’actuariat, en passant par la data science.</p>
   </div>
   <ol class="timeline">
-    <li class="next"><span class="when">2027 →</span><div class="what"><h4>Doctorat (projet)</h4><span class="org">Sciences de gestion × mathématiques stochastiques × analyse complexe</span><p><span class="todo">À compléter : établissement</span></p></div></li>
+    <li class="next"><span class="when">2027 →</span><div class="what"><h4>Doctorat (projet)</h4><span class="org">Critères ISQ et évaluation du risque de crédit</span><p><span class="todo">À compléter : établissement</span></p></div></li>
     <li><span class="when">2022 – 2024</span><div class="what"><h4>Diplôme d’actuaire</h4><span class="org">EURIA, Euro-Institut d’Actuariat</span></div></li>
-    <li><span class="when">2021 – 2022</span><div class="what"><h4>Master Data Science</h4><span class="org">ISADS, Université Paris-Saclay</span></div></li>
-    <li><span class="when">2018 – 2021</span><div class="what"><h4>Double licence Mathématiques–Physique</h4><span class="org"><span class="todo">À compléter : université</span></span></div></li>
+    <li><span class="when">2021 – 2022</span><div class="what"><h4>M1 ISADS, Data Science</h4><span class="org">UVSQ, Université Paris-Saclay</span></div></li>
+    <li><span class="when">2018 – 2021</span><div class="what"><h4>Double licence Mathématiques–Physique</h4><span class="org">UVSQ, Université Paris-Saclay</span></div></li>
     <li><span class="when">2018</span><div class="what"><h4>Baccalauréat scientifique</h4><span class="org">Mention Très Bien</span></div></li>
   </ol>
 </section>
@@ -364,19 +414,17 @@ footer .wrap { padding-block: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 
     <p class="lead">Les applications que j’ai construites et les ressources que j’utilise.</p>
   </div>
   <div class="cards">
-    <a class="card" href="https://www.linkedin.com/in/matthieu-moreau-le-breton" target="_blank" rel="noopener">
+    <a class="card" href="https://www.linkedin.com/in/matthieu-moreau-le-breton-b0a248184/" target="_blank" rel="noopener">
       <span class="meta">Réseau</span><h4>LinkedIn</h4><p class="muted">Parcours détaillé et actualités.</p>
     </a>
     <div class="card">
       <span class="meta">Application · Streamlit</span><h4>Outil d’analyse ESG (Convergence)</h4>
-      <p class="muted">Démo de l’analyse automatisée des reportings ESG.</p>
+      <p class="muted">Analyse automatisée en Python des reportings ESG du CAC 40.</p>
       <span class="todo">À compléter : lien, si l’outil est public</span>
     </div>
-    <div class="card">
-      <span class="meta">Code</span><h4>GitHub</h4>
-      <p class="muted">Dépôts de code et simulations.</p>
-      <span class="todo">À compléter : lien du profil</span>
-    </div>
+    <a class="card" href="https://github.com/M-au-Cube/" target="_blank" rel="noopener">
+      <span class="meta">Code</span><h4>GitHub</h4><p class="muted">Mes dépôts : applications Streamlit, Convergence, et le code de ce site.</p>
+    </a>
   </div>
 </section>
 
